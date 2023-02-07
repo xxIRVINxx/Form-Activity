@@ -3,64 +3,83 @@
 
 <head>
     <title>Form Activity</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
+        body {
+            margin-top: .7in;
+            background-color: lightslategrey;
+            align-content: center;
+            font-weight: 500;
+        }
+        
+        * {
+            font-family: 'Oswald', sans-serif;
+            text-align: left;
+        }
+        
+        h1 {
+            width: fit-content;
+            margin-top: 5%;
+        }
+        
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding-left: 25px;
+            padding-right: 25px;
+            border: 10px;
+        }
+        
+        input[type="reset"] {
+            background-color: red;
+            color: white;
+            padding-left: 25px;
+            padding-right: 25px;
+            border: 10px;
+        }
+        
+        .box {
+            background-color: white;
+            border-radius: 5px;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 240px;
+            border: 2in;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        .wrap {
+            width: 95%;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="box">
         <h1>Registration Form</h1>
+
         <form>
-            First Name: <br><input class="wrap" type="text" name="firstname"/></br>
-            Last Name: <br><input class="wrap" type="text" name="lastname" /></br>
-            Nick Name: <br><input class="wrap" type="text" name="nickname" /></br>
-            Email: <br><input class="wrap" type="email" name="email" /></br>
-            Password <br><input class="wrap" type="password" name="password" /></br>
-            Date of Birth: <br><input class="wrap" type="date" name="bday"/></br>
+            First Name: <br><input class="wrap" type="text" name="firstname" required/></br>
+            Last Name: <br><input class="wrap" type="text" name="lastname" required/></br>
+            Nick Name: <br><input class="wrap" type="text" name="nickname" required/></br>
+            Email: <br><input class="wrap" type="email" name="email" required/></br>
+            Password <br><input class="wrap" type="password" name="password" required/></br>
+            Date of Birth: <br><input class="wrap" type="date" name="bday" required/></br>
             Gender: <br><input type="radio" name="male" value="male" />
             <label for="male">Male</label>
             <input type="radio" name="female" value="female" />
             <label for="fale">Female</label>
             <input type="radio" name="other" value="other" />
-            <label for="other">Other</label><br /> Mobile: <br><input class="wrap" type="tel" name="mobile"/></br>
-            Address: <br><textarea class="wrap" name="address" cols="25" rows="10"></textarea></br>
+            <label for="other">Other</label><br /> Mobile: <br><input class="wrap" type="tel" name="mobile" required/></br>
+            Address: <br><textarea class="wrap" name="address" cols="25" rows="10" required></textarea></br>
             <input type="submit" name="submit" value="Submit" />
             <input type="reset" name="reset" value="Reset" />
         </form>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+    </div>
 </body>
+
 </html>
